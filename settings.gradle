@@ -1,0 +1,14 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = 'employee-payslip'
+include 'employee-api'
+include 'api-gateway'
+include 'discovery-service'
+include 'service'
+include 'repository'
+include 'domain'
+include 'utils'

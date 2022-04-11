@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group = 'com.employee'
+    version = 'v1'
+}
+
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.projectlombok:lombok:1.18.22'
+        annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    }
+}
+
+project(':discovery-service') {
+}
+
+project(':api-gateway') {
+}
+
+project(':employee-api') {
+    dependencies {
+        implementation project(':service')
+        implementation project(':repository')
+        implementation project(':domain')
+        implementation project(':utils')
+    }
+}
+
+project(':service') {
+    dependencies {
+        implementation project(':repository')
+        implementation project(':domain')
+        implementation project(':utils')
+    }
+}
+
+project(':repository') {
+    dependencies {
+        implementation project(':domain')
+    }
+}
+
+project(':utils') {
+
+}
+
+project(':domain') {
+    dependencies {
+        implementation project(':utils')
+    }
+}
+
+
+
