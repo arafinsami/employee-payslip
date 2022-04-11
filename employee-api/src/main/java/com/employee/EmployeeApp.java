@@ -22,7 +22,7 @@ public class EmployeeApp {
 		SpringApplication.run(EmployeeApp.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner(EmployeeService employeeService) {
 		return args -> {
 			List<Employee> employees = new ArrayList<>();
@@ -44,5 +44,5 @@ public class EmployeeApp {
 			employees.add(employee2);
 			employeeService.saveAll(employees);
 		};
-	}
+	}*/
 }

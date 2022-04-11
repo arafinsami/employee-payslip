@@ -1,5 +1,7 @@
 package com.employee.helper;
 
+import static com.employee.utils.CollectionUtils.nullSafe;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +14,6 @@ import com.employee.service.EmployeeService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-import static com.employee.utils.CollectionUtils.nullSafe;
 
 @Slf4j
 @Component
@@ -31,5 +31,9 @@ public class EmployeeHelper {
 		});
 		log.info("all employee lists from helper {} ", employees);
 		return nullSafe(employees);
+	}
+
+	public List<Employee> uploadPayslip(List<Employee> employees) {
+		return employeeService.saveAll(employees);
 	}
 }
